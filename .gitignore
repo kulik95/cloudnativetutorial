@@ -1,0 +1,57 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules
+pnpm-lock.yaml
+yarn.lock
+
+# Optional build output directory
+dist
+build
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE specific files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Package lock files (already covered above, but good to be explicit)
+# package-lock.json
+
+# macOS specific files
+.DS_Store
+
+# Temporary files and directories
+tmp
+temp
+/tmp*
+
+# Coverage reports
+coverage
+lcov-report
+
+# Electron specific files
+electron-builder/
+
+# Deployment specific files (adjust as needed)
+.aws-sam
+serverless.yml
+serverless.template.*
+
+# Other ignored files/directories (add your own as needed)
+# example: data/
