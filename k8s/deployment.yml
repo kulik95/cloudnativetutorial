@@ -23,9 +23,9 @@ spec:
           env:
             - name: PORT
               value: "3000"
-          envFrom:
-            - configMapRef:
-                name: configmap
+          # envFrom:
+          #   - configMapRef:
+          #       name: configmap
           # Optional: Add resource requests and limits
           # resources:
           #   requests:
@@ -34,3 +34,19 @@ spec:
           #   limits:
           #     cpu: "500m"
           #     memory: "512Mi"
+          volumeMounts:
+          - name: config
+            mountPath: "/config"
+            readOnly: true
+      volumes:
+        # You set volumes at the Pod level, then mount them into containers inside that Pod
+        - name: config
+          configMap:
+            # Provide the name of the ConfigMap you want to mount.
+            name: configmap
+            # An array of keys from the ConfigMap to create as files
+            items:
+            - key: "game.properties"
+              path: "game.properties"
+            - key: "user-interface.properties"
+              path: "user-interface.properties"
