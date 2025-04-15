@@ -23,8 +23,9 @@ spec:
           env:
             - name: PORT
               value: "3000"
-            - name: HELLO_MESSAGE
-              value: "HALI"
+          envFrom:
+            - configMapRef:
+                name: configmap
           # Optional: Add resource requests and limits
           # resources:
           #   requests:
