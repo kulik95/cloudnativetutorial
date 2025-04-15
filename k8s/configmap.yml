@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: game-demo
+  name: configmap
 data:
   HELLO_MESSAGE: "Udv"
   # property-like keys; each key maps to a simple value
