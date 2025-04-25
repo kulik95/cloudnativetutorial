@@ -26,7 +26,6 @@ spec:
           envFrom:
             - secretRef:
                 name: express-basic-auth
-                key: HELLO_MESSAGE
           # Optional: Add resource requests and limits
           # resources:
           #   requests:
