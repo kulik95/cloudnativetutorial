@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  storageClassName: microk8s-hostpath
+  resources:
+    requests:
+      storage: 1Gi
