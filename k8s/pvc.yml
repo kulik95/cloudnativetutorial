@@ -4,6 +4,8 @@ metadata:
   name: my-pvc
 spec:
   storageClassName: microk8s-hostpath
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
