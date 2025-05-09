@@ -6,7 +6,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      role: fire-nginx
+      app: fire-nginx
   policyTypes:
   - Ingress
   ingress:
