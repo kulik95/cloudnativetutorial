@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-app-deployment-with-storage
+  labels:
+    app: express-app-w-pv
+spec:
+  replicas: 2 # Specify the desired number of pods
+  selector:
+    matchLabels:
+      app: express-app-w-pv
+  template:
+    metadata:
+      labels:
+        app: express-app-w-pv
+    spec:
+      containers:
+        - name: express-app-container-w-pv
+          image: public.ecr.aws/b7x8p9h1/cloudnativetutorial:latest # Replace with your Docker image
+          volumeMounts:
+          - mountPath: "/mnt/local-data"
+            name: my-pvc
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+      volumes:
+        - name: my-pvc
+          persistentVolumeClaim:
+            claimName: my-pvc
